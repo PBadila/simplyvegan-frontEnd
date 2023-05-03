@@ -1,6 +1,6 @@
 # simplyvegan-frontEnd
 
-AJ Garret on the ones and twos 
+AJ Garrett on the ones and twos 
 
 
 lalalala-testing
