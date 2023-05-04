@@ -1,0 +1,29 @@
+font-family: 'Kelly Slab', cursive;
+header {
+    font-family: 'Rock Salt', cursive;
+}
+
+body{
+    background-color: #F5F0BB;
+}
+
+.facts { 
+    display: flex;
+    height: 89vh;
+    justify-content: center;
+    margin: 100px;
+}
+
+#factsBtn {
+    justify-content: center;
+    align-items: center;
+    border-radius: 15%;
+    height: 50px;
+    width: 150px;
+    font-size: 17px;
+    background-color: #73A9AD;
+}
+
+#textBox {
+    
+}
