@@ -1,0 +1,23 @@
+font-family: 'Kelly Slab', cursive;
+header {
+    font-family: 'Rock Salt', cursive;
+}
+
+nav {
+    height: 10vh;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    margin: 0;
+}
+
+#logo {
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    margin: 0;
+}
