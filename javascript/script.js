@@ -5,6 +5,7 @@ let recTime = document.querySelector('.recTime')
 let recIngred = document.querySelector('.recIngred')
 let recDirec = document.querySelector('.recDirec')
 let searchAllRecBtn = document.querySelector('#searchAllRecBtn')
+let ingred = document.querySelector()
 
 
 // fetch for random recipe
@@ -20,7 +21,7 @@ fetch("https://simplyvegan-backend-4h5s.onrender.com/recipes/random")
 
   //search All Recipes Button 
   searchAllRecBtn.addEventListener('click', ()=>{
-    
+    console.log('clicked')
   })
 
 
@@ -38,4 +39,4 @@ refreshBtn.addEventListener("click", () => {
         factsTitle.innerText = data.fact
     });
     });  
-})
+
