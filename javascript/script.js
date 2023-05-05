@@ -6,6 +6,7 @@ let recIngred = document.querySelector('.recIngred')
 let recDirec = document.querySelector('.recDirec')
 let searchAllRecBtn = document.querySelector('#searchAllRecBtn')
 
+let searchIngredInput = document.querySelector('#ingred')
 
 // fetch for random recipe
 fetch("https://simplyvegan-backend-4h5s.onrender.com/recipes/random")
@@ -17,11 +18,20 @@ fetch("https://simplyvegan-backend-4h5s.onrender.com/recipes/random")
         recIngred.innerText = data.ingredients
         recDirec.innerText = data.directions
     });
+ console.log(searchAllRecBtn)
 
   //search All Recipes Button 
   searchAllRecBtn.addEventListener('click', ()=>{
-    
-  })
+      let desiredingredient = searchIngredInput.value
+      fetch(`https://simplyvegan-backend-4h5s.onrender.com/recipes/${desiredingredient}`)
+      .then(response => response.json())
+      .then(data => {
+          console.log(data)
+      });
+  });
+   
+
+
 
 
 const myVegans = document.getElementById('');
@@ -37,5 +47,4 @@ refreshBtn.addEventListener("click", () => {
         console.log(data)
         factsTitle.innerText = data.fact
     });
-    });  
-})
+    }); 
