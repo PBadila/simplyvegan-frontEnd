@@ -4,6 +4,7 @@ let recTitle = document.querySelector('.recTitle')
 let recTime = document.querySelector('.recTime')
 let recIngred = document.querySelector('.recIngred')
 let recDirec = document.querySelector('.recDirec')
+let searchAllRecBtn = document.querySelector('#searchAllRecBtn')
 
 fetch("https://simplyvegan-backend-4h5s.onrender.com/recipes/random")
     .then(response => response.json())
@@ -19,6 +20,7 @@ fetch("https://simplyvegan-backend-4h5s.onrender.com/recipes/random")
 const myVegans = document.getElementById('');
 let factsTitle = document.querySelector('.factsTitle')
 let factsTime = document.querySelector('.factsTime')
+
 
 fetch("https://simplyvegan-backend-4h5s.onrender.com/facts/random")
     .then(response => response.json())
