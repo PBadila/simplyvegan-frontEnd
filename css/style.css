@@ -1,4 +1,4 @@
-font-family: 'Kelly Slab', cursive;
+/* font-family: 'Kelly Slab', cursive; */
 header {
     font-family: 'Rock Salt', cursive;
 }
@@ -7,11 +7,23 @@ body{
     background-color: #F5F0BB;
 }
 
+#container {
+    height: 80px;
+    border-bottom: black;
+    border-bottom-style: solid;
+    
+}
+
+#logo {
+    height: 69.6px;
+    width: 150px;
+}
+
 .facts { 
     display: flex;
-    height: 89vh;
-    justify-content: center;
-    margin: 100px;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
 }
 
 #factsBtn {
@@ -24,6 +36,16 @@ body{
     background-color: #73A9AD;
 }
 
-#textBox {
-    
+.textBox {
+    justify-content: center;
+    align-items: center;
+    background-color: #C4DFAA ;
+    border-radius:4px;
+    font-size: 20px;
+    padding:15px;
+    margin:15px;
+    width: 275px;
+    height: 100px;
+    border-color: black;
+    border-style: solid;
 }
