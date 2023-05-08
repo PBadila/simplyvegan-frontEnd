@@ -57,30 +57,32 @@ searchAllRecBtn.addEventListener('click', () => {
                
                 //what to do when next button clicked
                 nextButton.addEventListener("click", e => {
-                    recCount++
                     nextButton.style.display = 'none';
-                    recSearchTitle.innerText = data[recCount].name
-                    recSearchTime.innerText = data[recCount].time
-                    recSearchIngred.innerText = data[recCount].ingredients
-                    recSearchDirec.innerText = data[recCount].directions
-                    console.log(`recCount: ${recCount}`)
-                    console.log(`data.length: ${data.length}`)
-                    //if we're not at first recipe, display back btn
-                    if (recCount >=1) {
-                    backButton.style.display = "block"
-                    }
-                    else {
-                        backButton.stlye.display = 'none'
-                    }
+                    if(recCount < data.length){
+                        recCount++
+                        recSearchTitle.innerText = data[recCount].name
+                        recSearchTime.innerText = data[recCount].time
+                        recSearchIngred.innerText = data[recCount].ingredients
+                        recSearchDirec.innerText = data[recCount].directions
+                        console.log(`recCount: ${recCount}`)
+                        console.log(`data.length: ${data.length}`)
+                        //if we're not at first recipe, display back btn
+                        if (recCount >=1) {
+                        backButton.style.display = "block"
+                        }
+                        else {
+                            backButton.stlye.display = 'none'
+                        }
 
-                    //if we're not at last recipe, display next btn
-                    if (data.length - 1 > recCount) {
-                        nextButton.style.display = 'block'
-                        console.log(`${data.length - 1 > recCount}`)
-                    }
-                    else {
-                        nextButton.style.display = 'none'
-                        console.log(`${data.length - 1 > recCount}`)
+                        //if we're not at last recipe, display next btn
+                        if (data.length - 1 > recCount) {
+                            nextButton.style.display = 'block'
+                            console.log(`${data.length - 1 > recCount}`)
+                        }
+                        else {
+                            nextButton.style.display = 'none'
+                            console.log(`${data.length - 1 > recCount}`)
+                        }
                     }
                 })
                 //what to do when back button clicked
@@ -103,6 +105,7 @@ searchAllRecBtn.addEventListener('click', () => {
                             }
 
                     }
+                    
                 })
 
             }
@@ -113,6 +116,7 @@ searchAllRecBtn.addEventListener('click', () => {
                 recSearchIngred.innerText = ""
                 recSearchDirec.innerText = ""
             }
+        
         });
 });
 
