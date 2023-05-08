@@ -50,11 +50,8 @@ fetch("https://simplyvegan-backend-4h5s.onrender.com/recipes/random")
                 recSearchCardBody.appendChild(nextButton)
                 nextButton.innerText = "Next"
                 
-                //looping through the remaining recipes and creating card
-            
-
-                
             }
+            //put add event listener here
           }
 
       });
