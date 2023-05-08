@@ -34,8 +34,6 @@ console.log(searchAllRecBtn)
 
 //search All Recipes Button 
 searchAllRecBtn.addEventListener('click', () => {
-    // searchBtn++
-    // console.log(searchBtn)
     let desiredingredient = searchIngredInput.value
     searchIngredInput.value = ""
     fetch(`https://simplyvegan-backend-4h5s.onrender.com/recipes/${desiredingredient}`)
@@ -45,51 +43,38 @@ searchAllRecBtn.addEventListener('click', () => {
             let recCount = 0
             if (data.length > 0) {
 
-                //filling out first recipe card
-
+                //if there is data, then filling out first recipe card
                 recSearchTitle.innerText = data[0].name
                 recSearchTime.innerText = data[0].time
                 recSearchIngred.innerText = data[0].ingredients
                 recSearchDirec.innerText = data[0].directions
 
+                //if there is more than one recipe with that ingredient
                 if (data.length > 1) {
-                    //creates next button
-                    console.log(recCount)
-                    console.log(data.length)
-                    // if (recCount < data.length-1) {
+                    //shows next button
                     nextButton.style.display = "block"
-                    // nextButton.classList.add('nextRecipe')
-                    // recSearchCardBody.appendChild(nextButton)
-                    // nextButton.innerText = "Next"
-                    // //  }
                 }
-                console.log(nextButton)
-                //if (nextButton.style.display == 'block') {
-
-
+               
+                //what to do when next button clicked
                 nextButton.addEventListener("click", e => {
-                    console.log('click')
                     recCount++
                     nextButton.style.display = 'none';
-
-                    console.log(recCount);
                     recSearchTitle.innerText = data[recCount].name
                     recSearchTime.innerText = data[recCount].time
                     recSearchIngred.innerText = data[recCount].ingredients
                     recSearchDirec.innerText = data[recCount].directions
                     console.log(`recCount: ${recCount}`)
                     console.log(`data.length: ${data.length}`)
+                    //if we're not at first recipe, display back btn
                     if (recCount >=1) {
                     backButton.style.display = "block"
                     }
                     else {
                         backButton.stlye.display = 'none'
                     }
+
+                    //if we're not at last recipe, display next btn
                     if (data.length - 1 > recCount) {
-                        // let nextButton = document.createElement('button')
-                        // nextButton.classList.add('nextRecipe')
-                        // recSearchCardBody.appendChild(nextButton)
-                        // nextButton.innerText = "Next"
                         nextButton.style.display = 'block'
                         console.log(`${data.length - 1 > recCount}`)
                     }
@@ -97,21 +82,36 @@ searchAllRecBtn.addEventListener('click', () => {
                         nextButton.style.display = 'none'
                         console.log(`${data.length - 1 > recCount}`)
                     }
-
                 })
+                //what to do when back button clicked
                 backButton.addEventListener('click', e => {
+                    backButton.style.display = "none"
+                    console.log(`Checking recCount, just clicked back ${recCount}`)
                     if (recCount >=1 ) {
-                    recSearchTitle.innerText = data[recCount -1].name
-                    recSearchTime.innerText = data[recCount -1].time
-                    recSearchIngred.innerText = data[recCount -1].ingredients
-                    recSearchDirec.innerText = data[recCount -1].directions
-                    recCount --
-                    console.log(`recCount${recCount}`)
+                        recSearchTitle.innerText = data[recCount -1].name
+                        recSearchTime.innerText = data[recCount -1].time
+                        recSearchIngred.innerText = data[recCount -1].ingredients
+                        recSearchDirec.innerText = data[recCount -1].directions
+                        recCount --
+                            if(recCount >=1){
+                            backButton.style.display = "block"
+                            }
+                            if (data.length - 1 > recCount) {
+                            nextButton.style.display = 'block'
+                            console.log(`recCount${recCount}`)
+                            console.log(backButton.style.display)
+                            }
+
                     }
-
                 })
-                //}
 
+            }
+            //there are no recipes that contain that ingredient
+            else{
+                recSearchTitle.innerText = "No match, try searching a different ingredient."
+                recSearchTime.innerText = ""
+                recSearchIngred.innerText = ""
+                recSearchDirec.innerText = ""
             }
         });
 });
