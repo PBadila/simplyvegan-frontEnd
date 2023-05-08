@@ -6,8 +6,14 @@ let recIngred = document.querySelector('.recIngred')
 let recDirec = document.querySelector('.recDirec')
 let searchAllRecBtn = document.querySelector('#searchAllRecBtn')
 let searchIngredInput = document.querySelector('#ingred')
-let recSearchTitle = document.querySelector('.recSearchTitle')
 let recSearchCardBody = document.querySelector('.recSearchCardBody')
+let recSearchTitle = document.querySelector('.recSearchTitle')
+let recSearchTime = document.querySelector('.recSearchTime')
+let recSearchIngred = document.querySelector('.recSearchIngred')
+let recSearchDirec = document.querySelector('.recSearchDirec')
+
+
+
 console.log(recSearchCardBody)
 
 
@@ -30,16 +36,24 @@ fetch("https://simplyvegan-backend-4h5s.onrender.com/recipes/random")
       .then(response => response.json())
       .then(data => {
           console.log(data)
+          let recCount = 0
           if(data.length > 0){
             recSearchTitle.innerText = data[0].name
+            recSearchTime.innerText = data[0].time
+            recSearchIngred.innerText = data[0].ingredients
+            recSearchDirec.innerText = data[0].directions
+
             if(data.length >1){
+                //creates next button
                 let nextButton = document.createElement('button')
                 nextButton.classList.add('nextRecipe')
                 recSearchCardBody.appendChild(nextButton)
                 nextButton.innerText = "Next"
-                for(let i =1; i<data.length; i++){
+                
+                //looping through the remaining recipes and creating card
+            
 
-                }
+                
             }
           }
 
