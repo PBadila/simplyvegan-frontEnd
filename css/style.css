@@ -34,8 +34,8 @@ body {
 }
 
 #recipes {
-    justify-content: center;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -75,4 +75,20 @@ flex-direction: column;
 }
 .backBtn {
     display: none;
+}
+
+#ingred{
+    margin-bottom: 5%;
+}
+
+#recPerIngred{
+    margin-top:5%;
+}
+
+#recipeSearchCard{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top:5%;
+    margin-bottom:5%;
 }

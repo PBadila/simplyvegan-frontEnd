@@ -47,12 +47,14 @@
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Separated link</a></li>
             </ul>
-          </div>
+        </div>
 
         <!-- <div class="facts">
             <button type="click" id="factsBtn">Random Facts</button>
             <div id='textBox'></div>
         </div> -->
+        
+        <!--This is for the random recipe-->
         <div id="recipes">
             <div class="card recipeCard" style="width: 18rem;">
                 <div class="card-body">
@@ -60,58 +62,36 @@
                     <p class="card-text recTime">Time</p>
                     <p class="card-text recIngred">Ingredients</p>
                     <p class="card-text recDirec">Directions</p>
-                    <!-- <button id="searchAllRecBtn">Search All Recipes</button> -->
                 </div>
             </div>
 
-            <div id="recipes">
-                <div class="card recipeCard" style="width: 18rem;">
+            <!--Div to search recipes based on ingred-->
+            <div id="recPerIngred">
+                <div class="card searchCard" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title recTitle"></h5>
-                        <p class="card-text recTime">Time</p>
-                        <p class="card-text recIngred">Ingredients</p>
-                        <p class="card-text recDirec">Directions</p>
-                        <!-- <button id="searchAllRecBtn">Search All Recipes</button> -->
+                        <h5 class="card-title searchInstr">Search recipes by ingredient</h5>
+                            <label for="ingred">Ingredient:</label>
+                            <input type="text" id="ingred" name="ingred"></input>
+                            <button id="searchAllRecBtn">Search All Recipes</button>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!--Div for recipes to show up based on ingred-->
-                <div id="recPerIngred">
-                    <label for="ingred"> Desired Ingredient:</label>
-                    <input type="text" id="ingred" name="ingred">
-                    <button id="searchAllRecBtn">Search All Recipes</button>
-                </div>
-
+            <!--Div for recipe results from ingredient search-->
+            <div id = "recipeSearchCard">
                 <div class="card recipeSearchCard" style="width: 18rem;">
                     <div class="card-body recSearchCardBody">
-
-                      <h5 class="card-title recSearchTitle">Recipe Name</h5>
-                      <p class="card-text recSearchTime">Time</p>
-                      <p class="card-text recSearchIngred">Ingredients</p>
-                      <p class="card-text recSearchDirec">Directions</p>
-                      <button class ="nextBtn">Next</button>
-                      <button class ="backBtn">Back</button>
-                      <!-- <button id="searchAllRecBtn">Search All Recipes</button> -->
-
-                        <h5 class="card-title recSearchTitle"></h5>
+                        <h5 class="card-title recSearchTitle">Recipe Name</h5>
                         <p class="card-text recSearchTime">Time</p>
                         <p class="card-text recSearchIngred">Ingredients</p>
                         <p class="card-text recSearchDirec">Directions</p>
-                        <!-- <button id="searchAllRecBtn">Search All Recipes</button> -->
-
-                        <div class="card recipeSearchCard" style="width: 18rem;">
-                            <div class="card-body recSearchCardBody">
-                                <h5 class="card-title recSearchTitle">Recipe Name</h5>
-                                <p class="card-text recSearchTime">Time</p>
-                                <p class="card-text recSearchIngred">Ingredients</p>
-                                <p class="card-text recSearchDirec">Directions</p>
-                                <!-- <button id="searchAllRecBtn">Search All Recipes</button> -->
-                            </div>
-
-                        </div>
-
+                        <button class ="nextBtn">Next</button>
+                        <button class ="backBtn">Back</button>
                     </div>
                 </div>
+            </div>
+        </div>
     </main>
 
 
