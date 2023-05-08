@@ -72,9 +72,15 @@ flex-direction: column;
     
 .nextBtn {
  display: none;
+ align-self:center;
+ margin-left:auto;
+ margin-right:auto;
 }
 .backBtn {
     display: none;
+    margin-top:5%;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 #ingred{
