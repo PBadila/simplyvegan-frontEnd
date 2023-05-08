@@ -18,7 +18,7 @@ let backButton = document.querySelector('.backBtn')
 console.log(recSearchCardBody)
 
 // let searchBtn = 0   //counting search clicks
-
+let recCount = 0
 
 // fetch for random recipe
 fetch("https://simplyvegan-backend-4h5s.onrender.com/recipes/random")
@@ -36,11 +36,14 @@ console.log(searchAllRecBtn)
 searchAllRecBtn.addEventListener('click', () => {
     let desiredingredient = searchIngredInput.value
     searchIngredInput.value = ""
+    recCount = 0
+    backButton.style.display="none"
+    console.log(`new recipe: recCount = ${recCount}`)
     fetch(`https://simplyvegan-backend-4h5s.onrender.com/recipes/${desiredingredient}`)
         .then(response => response.json())
         .then(data => {
             console.log(data)
-            let recCount = 0
+            // let recCount = 0
             if (data.length > 0) {
 
                 //if there is data, then filling out first recipe card
@@ -58,7 +61,7 @@ searchAllRecBtn.addEventListener('click', () => {
                 //what to do when next button clicked
                 nextButton.addEventListener("click", e => {
                     nextButton.style.display = 'none';
-                    if(recCount < data.length){
+                    if(recCount < data.length-1){
                         recCount++
                         recSearchTitle.innerText = data[recCount].name
                         recSearchTime.innerText = data[recCount].time
@@ -90,10 +93,10 @@ searchAllRecBtn.addEventListener('click', () => {
                     backButton.style.display = "none"
                     console.log(`Checking recCount, just clicked back ${recCount}`)
                     if (recCount >=1 ) {
-                        recSearchTitle.innerText = data[recCount -1].name
-                        recSearchTime.innerText = data[recCount -1].time
-                        recSearchIngred.innerText = data[recCount -1].ingredients
-                        recSearchDirec.innerText = data[recCount -1].directions
+                        recSearchTitle.innerText = data[recCount-1].name
+                        recSearchTime.innerText = data[recCount-1].time
+                        recSearchIngred.innerText = data[recCount-1].ingredients
+                        recSearchDirec.innerText = data[recCount-1].directions
                         recCount --
                             if(recCount >=1){
                             backButton.style.display = "block"
