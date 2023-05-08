@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-light bg-light myNav">
         <a class="navbar-brand" href="#">
             <img src="/content/simplyvegan-low-resolution-logo-color-on-transparent-background (2).png" width="250"
@@ -36,30 +35,28 @@
                 </div>
             </div>
         </div>
-        
-        
+
+        <div class="input-group mb-3">
+            <button type="button" class="btn btn-outline-dark dropdown-toggle dropdown-toggle-split target" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Medical Checklist</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+          </div>
+
         <!-- <div class="facts">
             <button type="click" id="factsBtn">Random Facts</button>
             <div id='textBox'></div>
         </div> -->
-            <div id="recipes">
-        
-                <div class="card recipeCard" style="width: 18rem;">
-                    <div class="card-body">
-                      <h5 class="card-title recTitle">Randome Recipe Name</h5>
-                      <p class="card-text recTime">Time</p>
-                      <p class="card-text recIngred">Ingredients</p>
-                      <p class="card-text recDirec">Directions</p>
-                      <!-- <button id="searchAllRecBtn">Search All Recipes</button> -->
-                    </div>
-                </div>
-
-
         <div id="recipes">
-
             <div class="card recipeCard" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title recTitle"></h5>
+                    <h5 class="card-title recTitle">Randome Recipe Name</h5>
                     <p class="card-text recTime">Time</p>
                     <p class="card-text recIngred">Ingredients</p>
                     <p class="card-text recDirec">Directions</p>
@@ -67,35 +64,44 @@
                 </div>
             </div>
 
-            <!--Div for recipes to show up based on ingred-->
-            <div id="recPerIngred">
-                <label for="ingred"> Desired Ingredient:</label>
-                <input type="text" id="ingred" name="ingred">
-                <button id="searchAllRecBtn">Search All Recipes</button>
+            <div id="recipes">
+                <div class="card recipeCard" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title recTitle"></h5>
+                        <p class="card-text recTime">Time</p>
+                        <p class="card-text recIngred">Ingredients</p>
+                        <p class="card-text recDirec">Directions</p>
+                        <!-- <button id="searchAllRecBtn">Search All Recipes</button> -->
+                    </div>
+                </div>
 
-
-            </div>
-
-            <div class="card recipeSearchCard" style="width: 18rem;">
-                <div class="card-body recSearchCardBody">
-                    <h5 class="card-title recSearchTitle"></h5>
-                    <p class="card-text recSearchTime">Time</p>
-                    <p class="card-text recSearchIngred">Ingredients</p>
-                    <p class="card-text recSearchDirec">Directions</p>
-                    <!-- <button id="searchAllRecBtn">Search All Recipes</button> -->
+                <!--Div for recipes to show up based on ingred-->
+                <div id="recPerIngred">
+                    <label for="ingred"> Desired Ingredient:</label>
+                    <input type="text" id="ingred" name="ingred">
+                    <button id="searchAllRecBtn">Search All Recipes</button>
+                </div>
 
                 <div class="card recipeSearchCard" style="width: 18rem;">
                     <div class="card-body recSearchCardBody">
-                      <h5 class="card-title recSearchTitle">Recipe Name</h5>
-                      <p class="card-text recSearchTime">Time</p>
-                      <p class="card-text recSearchIngred">Ingredients</p>
-                      <p class="card-text recSearchDirec">Directions</p>
-                      <!-- <button id="searchAllRecBtn">Search All Recipes</button> -->
-                    </div>
+                        <h5 class="card-title recSearchTitle"></h5>
+                        <p class="card-text recSearchTime">Time</p>
+                        <p class="card-text recSearchIngred">Ingredients</p>
+                        <p class="card-text recSearchDirec">Directions</p>
+                        <!-- <button id="searchAllRecBtn">Search All Recipes</button> -->
 
+                        <div class="card recipeSearchCard" style="width: 18rem;">
+                            <div class="card-body recSearchCardBody">
+                                <h5 class="card-title recSearchTitle">Recipe Name</h5>
+                                <p class="card-text recSearchTime">Time</p>
+                                <p class="card-text recSearchIngred">Ingredients</p>
+                                <p class="card-text recSearchDirec">Directions</p>
+                                <!-- <button id="searchAllRecBtn">Search All Recipes</button> -->
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
     </main>
 
 

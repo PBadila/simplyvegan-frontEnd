@@ -3,11 +3,21 @@ header {
     font-family: 'Rock Salt', cursive;
 }
 
-body{
+body {
     background-color: #F5F0BB;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.mb-3 {
+    display: flex;
+    justify-content: center;
+}
+
+.target {
+    background-color: #73A9AD !important;
+    font-style: white !important;
 }
 
 #facts {
@@ -21,7 +31,6 @@ body{
 
 .card-body{
     background-color: #C4DFAA;
-
 }
 
 #recipes {
@@ -30,24 +39,18 @@ body{
     flex-wrap: wrap;
 }
 
+/* !important acts as a z-index to override bootstrap css*/
 #searchAllRecBtn {
     background-color: #73A9AD !important;
 }
 
-/* !important acts as a z-index to override bootstrap css*/
 .myNav {
     background-color: #F5F0BB !important;
 }
 
 .align-top {
     justify-content: center !important;
-    
 }
-
-
-
-
-
 
 .facts { 
     display: flex;
@@ -55,5 +58,3 @@ body{
     flex-direction: column;
     padding: 20px;
 }
-
-
