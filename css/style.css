@@ -5,19 +5,49 @@ header {
 
 body{
     background-color: #F5F0BB;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-#container {
-    height: 80px;
-    border-bottom: black;
-    border-bottom-style: solid;
+#facts {
+    justify-content: center;
+    display: flex;
+}
+
+.btn-primary {
+    background-color: #73A9AD !important;
+}
+
+.card-body{
+    background-color: #C4DFAA;
+
+}
+
+#recipes {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#searchAllRecBtn {
+    background-color: #73A9AD !important;
+}
+
+/* !important acts as a z-index to override bootstrap css*/
+.myNav {
+    background-color: #F5F0BB !important;
+}
+
+.align-top {
+    justify-content: center !important;
     
 }
 
-#logo {
-    height: 69.6px;
-    width: 150px;
-}
+
+
+
+
 
 .facts { 
     display: flex;
@@ -26,26 +56,4 @@ body{
     padding: 20px;
 }
 
-#factsBtn {
-    justify-content: center;
-    align-items: center;
-    border-radius: 15%;
-    height: 50px;
-    width: 150px;
-    font-size: 17px;
-    background-color: #73A9AD;
-}
 
-.textBox {
-    justify-content: center;
-    align-items: center;
-    background-color: #C4DFAA ;
-    border-radius:4px;
-    font-size: 20px;
-    padding:15px;
-    margin:15px;
-    width: 275px;
-    height: 100px;
-    border-color: black;
-    border-style: solid;
-}
