@@ -5,8 +5,11 @@ let recTime = document.querySelector('.recTime')
 let recIngred = document.querySelector('.recIngred')
 let recDirec = document.querySelector('.recDirec')
 let searchAllRecBtn = document.querySelector('#searchAllRecBtn')
-
 let searchIngredInput = document.querySelector('#ingred')
+let recSearchTitle = document.querySelector('.recSearchTitle')
+let recSearchCardBody = document.querySelector('.recSearchCardBody')
+console.log(recSearchCardBody)
+
 
 // fetch for random recipe
 fetch("https://simplyvegan-backend-4h5s.onrender.com/recipes/random")
@@ -27,6 +30,19 @@ fetch("https://simplyvegan-backend-4h5s.onrender.com/recipes/random")
       .then(response => response.json())
       .then(data => {
           console.log(data)
+          if(data.length > 0){
+            recSearchTitle.innerText = data[0].name
+            if(data.length >1){
+                let nextButton = document.createElement('button')
+                nextButton.classList.add('nextRecipe')
+                recSearchCardBody.appendChild(nextButton)
+                nextButton.innerText = "Next"
+                for(let i =1; i<data.length; i++){
+
+                }
+            }
+          }
+
       });
   });
    
