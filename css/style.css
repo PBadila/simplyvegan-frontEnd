@@ -49,3 +49,9 @@ body{
     border-color: black;
     border-style: solid;
 }
+.nextBtn {
+ display: none;
+}
+.backBtn {
+    display: none;
+}
