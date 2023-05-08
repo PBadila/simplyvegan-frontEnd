@@ -36,11 +36,27 @@ console.log(searchAllRecBtn)
 searchAllRecBtn.addEventListener('click', () => {
     let desiredingredient = searchIngredInput.value
     searchIngredInput.value = ""
+    let recCount = 0
+    console.log(recCount)
+    console.log(desiredingredient)
+    console.log(searchIngredInput.value)
+    
+    //let recCount = 0
+    if(backButton.style.display == "block"){
+         console.log(backButton.style.display)
+         backButton.style.display = "none"
+     }
+     if(nextButton.style.display == "block"){
+         console.log(nextButton.style.display)
+         nextButton.stlye.display = "none"
+     }
+   
     fetch(`https://simplyvegan-backend-4h5s.onrender.com/recipes/${desiredingredient}`)
         .then(response => response.json())
         .then(data => {
             console.log(data)
-            let recCount = 0
+            //let recCount = 0
+            console.log(recCount)
             if (data.length > 0) {
 
                 //if there is data, then filling out first recipe card
@@ -60,6 +76,8 @@ searchAllRecBtn.addEventListener('click', () => {
                     nextButton.style.display = 'none';
                     if(recCount < data.length){
                         recCount++
+                        console.log(data)
+                        console.log(`recCount: ${recCount}`)
                         recSearchTitle.innerText = data[recCount].name
                         recSearchTime.innerText = data[recCount].time
                         recSearchIngred.innerText = data[recCount].ingredients
