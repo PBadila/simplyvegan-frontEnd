@@ -89,10 +89,19 @@ flex-direction: column;
 
 #recPerIngred{
     margin-top:5%;
+    margin-bottom:5%
 }
 
 #recipeSearchCard{
-    display: flex;
+    display: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top:5%;
+    margin-bottom:5%;
+}
+
+#favorites{
+    display: none;
     justify-content: center;
     flex-wrap: wrap;
     margin-top:5%;
@@ -117,9 +126,7 @@ flex-direction: column;
     flex-direction: row;
     justify-content:space-around;
 }
-#favorites{
-    display:none;
-}
+
 
 .favRec{
     display:none;
@@ -127,4 +134,11 @@ flex-direction: column;
 
 .favPage{
     display:none;
+}
+
+.love:hover{
+    color:#73A9AD;
+    text-decoration: underline;
+
+
 }
