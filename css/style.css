@@ -105,6 +105,22 @@ body {
 #ingred {
     margin-bottom: 5%;
 }
+ backToFavListBtn
+#recPerIngred{
+    margin-top:5%;
+    margin-bottom:5%
+}
+
+#recipeSearchCard{
+    display: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top:5%;
+    margin-bottom:5%;
+}
+
+#favorites{
+    display: none;
 
 #recPerIngred {
     margin-top: 5%;
@@ -113,6 +129,7 @@ body {
 
 #recipeSearchCard {
     display: flex;
+
     justify-content: center;
     flex-wrap: wrap;
 mediaQ
@@ -151,9 +168,7 @@ mediaQ
     flex-direction: row;
     justify-content:space-around;
 }
-#favorites{
-    display:none;
-}
+
 
 .favRec{
     display:none;
@@ -161,5 +176,12 @@ mediaQ
 
 .favPage{
     display:none;
+  backToFavListBtn
+}
+
+.love:hover{
+    color:#73A9AD;
+    text-decoration: underline;
+
 
 }

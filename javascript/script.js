@@ -24,9 +24,9 @@ let favTime = document.querySelector('.favTime')
 let favIngred = document.querySelector('.favIngred')
 let favDirec = document.querySelector('.favDirec')
 let favBackToFavBtn = document.querySelector('.favBackToFavBtn')
+let recipeSearchCard = document.querySelector('#recipeSearchCard')
 
-
-console.log(favTitle)
+console.log(recipeSearchCard)
 console.log(favRec)
 console.log(addBtn)
 
@@ -50,6 +50,9 @@ console.log(searchAllRecBtn)
 
 //search All Recipes Button 
 searchAllRecBtn.addEventListener('click', () => {
+    if(recipeSearchCard.style.display = "none"){
+        recipeSearchCard.style.display = "flex"
+    }
     let desiredingredient = searchIngredInput.value
     searchIngredInput.value = ""
     let recCount = 0
@@ -81,13 +84,15 @@ searchAllRecBtn.addEventListener('click', () => {
                 //console.log(favorites)
                 // if(favorites.includes(data[0].name)){
                     btnPic.src="./images/emptyHeart.png"
-                    favorites.forEach(fav =>{
-                        if(fav.name == data[0].name){
-                            btnPic.src="./images/fillHeart.png"
-                        }
-                    //console.log('its included!')
-                    //console.log(favorites)
-                    })
+                    if(favorites.length >0){
+                        favorites.forEach(fav =>{
+                            if(fav.name == data[0].name){
+                                btnPic.src="./images/fillHeart.png"
+                            }
+                        //console.log('its included!')
+                        //console.log(favorites)
+                        })
+                    }
                 
                 recSearchTitle.innerText = data[0].name
                 recSearchTime.innerText = data[0].time
@@ -110,11 +115,18 @@ searchAllRecBtn.addEventListener('click', () => {
                         console.log(`recCount: ${recCount}`)
                         //fill heart if fav, else empty
                         btnPic.src="./images/emptyHeart.png"
-                        favorites.forEach(fav =>{
-                            if(fav.name == data[recCount].name){
-                                btnPic.src="./images/fillHeart.png"
-                            }
-                        })
+                        if(favorites.length >0){
+                            favorites.forEach(fav =>{
+                                console.log(fav.name)
+                                console.log(recCount)
+                                console.log(data)
+                                console.log(data[recCount].name)
+                                if(fav.name == data[recCount].name){
+                                    btnPic.src="./images/fillHeart.png"
+                                }
+                            })
+                        }
+                        console.log(recCount)
                         recSearchTitle.innerText = data[recCount].name
                         recSearchTime.innerText = data[recCount].time
                         recSearchIngred.innerText = data[recCount].ingredients
@@ -147,11 +159,13 @@ searchAllRecBtn.addEventListener('click', () => {
                     if (recCount >=1 ) {
                         //fill heart if fav, else empty
                         btnPic.src="./images/emptyHeart.png"
-                        favorites.forEach(fav =>{
-                            if(fav.name == data[recCount-1].name){
-                                btnPic.src="./images/fillHeart.png"
-                            }
-                        })
+                        if(favorites.length >0){
+                            favorites.forEach(fav =>{
+                                if(fav.name == data[recCount-1].name){
+                                    btnPic.src="./images/fillHeart.png"
+                                }
+                            })
+                        }
                         recSearchTitle.innerText = data[recCount -1].name
                         recSearchTime.innerText = data[recCount -1].time
                         recSearchIngred.innerText = data[recCount -1].ingredients
@@ -171,36 +185,57 @@ searchAllRecBtn.addEventListener('click', () => {
                 })
                 //adding to favorites
                 addBtn.addEventListener('click',e=>{
+                    let check = 0
+                    console.log('clicked heart')
                     console.log(btnPic)
                     console.log(btnPic.src)
-                    btnPic.src="./images/fillHeart.png"
-                    console.log(data)
-                    data.forEach(recipe => {
-                        if(recSearchTitle.innerText == recipe.name){
-                            console.log(recipe.name)
-                            favorites.push(recipe)
-                            console.log(favorites)
-                            let fav = document.createElement('p')
-                            fav.classList.add('card-text')
-                            fav.classList.add('favTitle')
-                            console.log(fav)
-                            fav.innerText = recipe.name
-                            favPage.appendChild(fav)
-                            favs.style.display = "block"
-                            favPage.style.display = "block"
-                            fav.addEventListener('click',() =>{
-                                favPage.style.display = "none"
-                                favRec.style.display = "block"
-                                console.log('clicked')
-                                favTitle.innerText = recipe.name
-                                favTime.innerText = recipe.time
-                                favIngred.innerText = recipe.ingredients
-                                favDirec.innerText = recipe.directions
-                            })
+                    if(favorites.length >0){
+                        favorites.forEach(item =>{
+                            if(item.name == recSearchTitle.innerText){
+                                check++
+                                console.log(check)
+                            }
+                        })
+                    }
+                    if(check == 0){
 
-                        }
+                        btnPic.src="./images/fillHeart.png"
+                        console.log(data)
+                        data.forEach(recipe => {
+                            if(recSearchTitle.innerText == recipe.name){
+                                console.log(recipe.name)
+                                favorites.push(recipe)
+                                console.log(favorites)
+                                let fav = document.createElement('p')
+                                fav.classList.add('card-text')
+                                fav.classList.add('favTitle')
+                                fav.classList.add('love')
+                                console.log(fav)
+                                fav.innerText = recipe.name
+                                favPage.appendChild(fav)
+                                favs.style.display = "flex"
+                                favPage.style.display = "block"
+                           
+                                fav.addEventListener('click',() =>{
+                                    favPage.style.display = "none"
+                                    favRec.style.display = "block"
+                                    console.log('clicked')
+                                    favTitle.innerText = recipe.name
+                                    favTime.innerText = recipe.time
+                                    favIngred.innerText = recipe.ingredients
+                                    favDirec.innerText = recipe.directions
+                                })
+
+                            }
                         
-                    });
+                        });
+                    }
+                   
+                })
+
+                favBackToFavBtn.addEventListener('click',()=>{
+                   favPage.style.display = "block"
+                   favRec.style.display = "none"
                 })
 
             }
