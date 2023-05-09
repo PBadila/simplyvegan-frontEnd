@@ -14,8 +14,9 @@ header {
 
 body {
     background-color: #F5F0BB;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
 }
 
 .mb-3 {
@@ -88,24 +89,22 @@ body {
 .nextBtn {
 
     display: none;
- display: none;
- background-color: #73A9AD !important;
- margin-left:auto;
- margin-right:auto;
-  
+    background-color: #73A9AD !important;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .backBtn {
     display: none;
     background-color: #73A9AD !important;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #ingred {
     margin-bottom: 5%;
 }
- backToFavListBtn
 #recPerIngred{
     margin-top:5%;
     margin-bottom:5%
@@ -119,69 +118,67 @@ body {
     margin-bottom:5%;
 }
 
-#favorites{
-    display: none;
-
 #recPerIngred {
     margin-top: 5%;
-    min-width: 18rem;
+    margin-bottom: 5%
 }
 
 #recipeSearchCard {
-    display: flex;
-
+    display: none;
     justify-content: center;
     flex-wrap: wrap;
-mediaQ
     margin-top: 5%;
     margin-bottom: 5%;
-    min-width: 18rem;
 }
 
-.navbar-brand { 
-    justify-content: "center"; 
+.navbar-brand {
+    justify-content: "center";
     align-items: center;
     display: flex;
     flex-wrap: wrap;
     width: "250";
     height: "200";
-
-    margin-top:5%;
-    margin-bottom:5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
-#buttonHolder{
-    display:flex;
-    flex-direction:row;
-    justify-content:space-around;
+#favorites {
+    display: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
-#addBtn{
-    width:20%;
-    display:none;
+
+#buttonHolder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
-#btnPic{
-    width:100%;
-    height:auto;
+
+#addBtn {
+    width: 20%;
+    display: none;
 }
-.timeBox{
-    display:flex;
+
+#btnPic {
+    width: 100%;
+    height: auto;
+}
+
+.timeBox {
+    display: flex;
     flex-direction: row;
     justify-content:space-around;
 }
-
-
-.favRec{
-    display:none;
+.favRec {
+    display: none;
 }
 
-.favPage{
-    display:none;
-  backToFavListBtn
+.favPage {
+    display: none;
 }
-
 .love:hover{
     color:#73A9AD;
     text-decoration: underline;
-
-
 }
