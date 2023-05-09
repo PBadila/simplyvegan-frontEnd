@@ -47,6 +47,8 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    padding-left:5%;
+    padding-right:5%;
 }
 
 /* !important acts as a z-index to override bootstrap css*/
@@ -115,7 +117,15 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-mediaQ
+    margin-top: 5%;
+    margin-bottom: 5%;
+    min-width: 18rem;
+}
+
+#favorites {
+    display: none;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 5%;
     margin-bottom: 5%;
     min-width: 18rem;
@@ -151,9 +161,7 @@ mediaQ
     flex-direction: row;
     justify-content:space-around;
 }
-#favorites{
-    display:none;
-}
+
 
 .favRec{
     display:none;
