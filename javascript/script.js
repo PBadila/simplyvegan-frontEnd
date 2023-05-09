@@ -13,10 +13,26 @@ let recSearchIngred = document.querySelector('.recSearchIngred')
 let recSearchDirec = document.querySelector('.recSearchDirec')
 let nextButton = document.querySelector('.nextBtn')
 let backButton = document.querySelector('.backBtn')
+let addBtn = document.querySelector('#addBtn')
+let btnPic = document.querySelector('#btnPic')
+let favCardBody = document.querySelector('.favCardBody')
+let favs = document.querySelector('#favorites')
+let favPage = document.querySelector('.favPage')
+let favRec = document.querySelector('.favRec')
+let favTitle = document.querySelector('.favTitle')
+let favTime = document.querySelector('.favTime')
+let favIngred = document.querySelector('.favIngred')
+let favDirec = document.querySelector('.favDirec')
+let favBackToFavBtn = document.querySelector('.favBackToFavBtn')
+
+
+console.log(favTitle)
+console.log(favRec)
+console.log(addBtn)
 
 
 console.log(recSearchCardBody)
-
+let favorites = []
 // let searchBtn = 0   //counting search clicks
 
 
@@ -62,6 +78,7 @@ searchAllRecBtn.addEventListener('click', () => {
                 //if there is data, then filling out first recipe card
                 recSearchTitle.innerText = data[0].name
                 recSearchTime.innerText = data[0].time
+                addBtn.style.display = "block"
                 recSearchIngred.innerText = data[0].ingredients
                 recSearchDirec.innerText = data[0].directions
 
@@ -124,6 +141,45 @@ searchAllRecBtn.addEventListener('click', () => {
 
                     }
                     
+                })
+                //adding to favorites
+                addBtn.addEventListener('click',e=>{
+                    console.log(btnPic)
+                    console.log(btnPic.src)
+                    btnPic.src="./images/fillHEart.png"
+                    console.log(data)
+                    data.forEach(recipe => {
+                        if(recSearchTitle.innerText == recipe.name){
+                            console.log(recipe.name)
+                            favorites.push(recipe)
+                            console.log(favorites)
+                            let fav = document.createElement('p')
+                            fav.classList.add('card-text')
+                            fav.classList.add('favTitle')
+                            console.log(fav)
+                            fav.innerText = recipe.name
+                            favCardBody.appendChild(fav)
+                            favs.style.display = "block"
+                            favPage.style.display = "block"
+                            fav.addEventListener('click',() =>{
+                                favPage.style.display = "none"
+                                favRec.style.display = "block"
+                                console.log('clicked')
+                                favTitle.innerText = "Chicken"
+                                favTime.innerText = recipe.time
+                                favIngred.innerText = recipe.ingredients
+                                favDirec.innerText = recipe.directions
+                               
+
+
+                              
+
+
+                            })
+
+                        }
+                        
+                    });
                 })
 
             }

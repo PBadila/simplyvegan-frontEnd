@@ -104,3 +104,27 @@ flex-direction: column;
     flex-direction:row;
     justify-content:space-around;
 }
+#addBtn{
+    width:20%;
+    display:none;
+}
+#btnPic{
+    width:100%;
+    height:auto;
+}
+.timeBox{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+#favorites{
+    display:none;
+}
+
+.favRec{
+    display:none;
+}
+
+.favPage{
+    display:none;
+}
