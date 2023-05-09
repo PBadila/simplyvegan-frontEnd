@@ -83,12 +83,39 @@
                 <div class="card recipeSearchCard" style="width: 18rem;">
                     <div class="card-body recSearchCardBody">
                         <h5 class="card-title recSearchTitle"></h5>
+                            <div class="timeBox">
+                                <p class="card-text recSearchTime"></p>
+                                <button id="addBtn"><img src = "./images/emptyHeart.png" id="btnPic"></button>
+                            </div>
+                        
                         <p class="card-text recSearchTime"></p>
                         <p class="card-text recSearchIngred"></p>
                         <p class="card-text recSearchDirec"></p>
                         <div id="buttonHolder">
                             <button class ="backBtn">Back</button>
                             <button class ="nextBtn">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id = "favorites">
+                <div class="card favorites" style="width: 18rem;">
+                    <div class="card-body favCardBody">
+                        <div class = "favPage">
+                            <h5 class="card-title favTitleList">My Favorites</h5>
+
+                            <!--favorites will be created here in DOM-->
+                        </div>
+                        <div class = "favRec">
+                            <h5 class="card-title favTitle">Name</h5>
+                            <p class="card-text favTime">Time</p>
+                            <p class="card-text favIngred">Ingredients</p>
+                            <p class="card-text favDirec">Directions</p>
+                            <button class="favBackToFavBtn">Back to Favorites</button>
+
+
+                            
                         </div>
                     </div>
                 </div>
