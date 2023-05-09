@@ -19,7 +19,6 @@ body {
     justify-content: center;
 }
 
-
 .mb-3 {
     display: flex;
     justify-content: center;
@@ -106,6 +105,18 @@ body {
 #ingred {
     margin-bottom: 5%;
 }
+#recPerIngred{
+    margin-top:5%;
+    margin-bottom:5%
+}
+
+#recipeSearchCard{
+    display: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top:5%;
+    margin-bottom:5%;
+}
 
 #recPerIngred {
     margin-top: 5%;
@@ -158,18 +169,15 @@ body {
 .timeBox {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content:space-around;
 }
-
 .favRec {
     display: none;
 }
 
 .favPage {
     display: none;
-
 }
-
 .love:hover{
     color:#73A9AD;
     text-decoration: underline;
